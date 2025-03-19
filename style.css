@@ -276,3 +276,43 @@ h1 {
     background: rgba(255, 255, 255, 0.3);
 }
 
+/* 移动端适配 */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+        transform: scale(0.8);
+        transform-origin: top center;
+    }
+
+    #rules-container {
+        max-width: 90%;
+        font-size: 14px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(4, 40px);
+        grid-gap: 8px;
+    }
+
+    .cell {
+        width: 40px;
+        height: 40px;
+    }
+
+    .color-button {
+        width: 35px !important;
+        height: 35px !important;
+    }
+
+    #controls {
+        gap: 20px;
+    }
+}
+
+/* 超小屏幕适配 */
+@media (max-width: 360px) {
+    body {
+        transform: scale(0.7);
+    }
+}
+
