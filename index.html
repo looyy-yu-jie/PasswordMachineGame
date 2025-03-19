@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>超级密码机</title>
+    <!-- 配置Style路径 -->
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <h1>颜色密码破解</h1>
+    <div id="rules-container" style="max-width:600px; margin:0 auto 20px; text-align:left;">
+        <p style="font-weight:bold; margin:0;">
+            游戏规则 
+            <span id="toggleRules" style="cursor:pointer; color:#0078D7; font-weight:normal;">[隐藏]</span>
+        </p>
+        <ul id="rules-content" style="margin-top:5px;">
+            <li>系统将随机生成4种不同的颜色作为密码。</li>
+            <li>每行请点击选择4种不重复的颜色。</li>
+            <li>提交后右侧反馈指示灯以绿色显示正确颜色和位置的数量。</li>
+            <li>你有7次机会破解密码，正确猜中全部颜色和位置即可获胜。</li>
+        </ul>
+    </div>
+    <!-- 新增容器，将游戏和控制区域横向排列 -->
+    <div id="container" style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+        <div id="game"></div>
+        <div id="controls"></div>  <!-- 这里仅用于放颜色选择块 -->
+    </div>
+    <div id="actions" style="margin-top: 20px; text-align: center;"></div>
+    <div id="result" style="margin-top:20px; font-size:18px; color:#333;"></div>
+    <!-- 自定义确认弹窗结构 -->
+    <div id="customConfirmOverlay">
+      <div id="customConfirmBox">
+        <p id="customConfirmMessage">确定要重新开始游戏吗？</p>
+        <button id="customConfirmOk">确定</button>
+        <button id="customConfirmCancel">取消</button>
+      </div>
+    </div>
+    <!-- 自定义提示弹窗结构 -->
+    <div id="customAlertOverlay">
+      <div id="customAlertBox">
+        <p id="customAlertMessage">消息</p>
+        <button id="customAlertOk">确定</button>
+      </div>
+    </div>
+    <!-- 配置Script路径 -->
+    <div id="audioControl">
+        <button id="musicToggle">
+            <span class="music-on">🔊</span>
+            <span class="music-off" style="display:none">🔇</span>
+        </button>
+        <audio id="bgMusic" loop>
+            <source src="xiaoyu.mp3" type="audio/mp3">
+        </audio>
+    </div>
+    <script src="script.js"></script>
+    <script src="audio.js"></script>
+ 
+</body>
+</html>
